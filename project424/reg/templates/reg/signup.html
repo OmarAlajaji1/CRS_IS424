@@ -1,0 +1,49 @@
+{% extends "reg/layout.html" %}
+{% block body %}
+
+<div class="centerstyle">
+
+  <form method="post">
+    {% csrf_token %}
+
+    <!-- Username input -->
+    <div>
+      <br>
+    </div>
+    <div class="form-floating mb-4">
+      <input type="text" id="floatingInput" class="form-control" name="UserName" placeholder="Username"/>
+      <label for="floatingInput">Username</label>
+    </div>
+
+    <!-- First input -->
+    <div class="form-floating mb-4">
+      <input type="text" id="floatingInput" class="form-control" name="firstName" placeholder="First Name" />
+      <label for="floatingInput">First Name</label>
+    </div>
+
+    <!-- Last input -->
+    <div class="form-floating mb-4">
+      <input type="text" id="floatingInput" class="form-control" name="lastName" placeholder="Last Name"/>
+      <label for="floatingInput">Last Name</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-floating mb-4">
+      <input type="password" id="floatingInput" class="form-control" name="passWord" placeholder="Password" />
+      <label for="floatingInput">Password</label>
+    </div>
+
+    <!-- Submit button -->
+    <!--{{urls}}-->
+    <div class="centerElement"> 
+      <button type="submit" class="btn btn-primary btn-lg mb-4" value="Signup">Sign Up</button>
+    </div>
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>A member? <a href="{% url 'reg:login_view' %}">Login</a></p>
+    </div>
+
+
+  </form>
+</div>
+{% endblock %}
