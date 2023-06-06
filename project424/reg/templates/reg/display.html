@@ -1,0 +1,45 @@
+{% extends "reg/layoutnav.html" %}
+
+{% block x %}
+
+
+
+<h1 class="centerElement">{{COU.name}}</h1>
+<table table class="table table-hover">
+    <thead>
+        <th scope="col">Name</th>
+        <th scope="col">Course Id</th>
+        <th scope="col">Hours</th>
+        <th scope="col">Department</th>
+        <th scope="col">Instructor</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{COU.name}}</td>
+            <td>{{COU.courseid}}</td>
+            <td>{{COU.hours}}</td>
+            <td>{{COU.hostcollege.name}}</td>
+            <td>{{COU.instructor}}</td>
+        </tr>
+
+    </tbody>
+</table>
+<h4>Discription:</h4>
+<p>{{COU.dicription}}</p>
+
+<form action="{% url 'reg:add'  COU.courseid %}" method="post">
+    {% csrf_token %}
+    <!-- Submit button -->
+    <div class="centerElement"> 
+        <button type="submit" class="btn btn-primary btn-lg mb-4" value="Add">Add</button>
+    </div>
+</form>
+
+
+
+{% endblock %}
+
+
+
+
+
